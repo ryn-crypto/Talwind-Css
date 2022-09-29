@@ -1,0 +1,480 @@
+<!DOCTYPE html>
+<html lang="en" class="">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@200;400;600;700;900&display=swap"
+      rel="stylesheet"
+    />
+    <title>Belajar menggunakan tailwind</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            spacing: {
+              13: "3.25rem",
+            },
+            fontFamily: {
+              inter: ["Inter"],
+            },
+            animation: {
+              "spin-slow": "spin 3s linear infinite",
+              "wiggle-goyang": "goyang 1s ease-in-out infinite",
+            },
+            Keyframes: {
+              goyang: {
+                "0%, 100%": { transform: "rotate(-30deg)" },
+                "50%": { transform: "rotate(3deg)" },
+              },
+            },
+          },
+        },
+      };
+    </script>
+    <style type="text/tailwindcss">
+      #toggle:checked ~ label div.toggle-circle {
+        @apply translate-x-3;
+      }
+    </style>
+  </head>
+  <body class="dark:bg-slate-800 dark:text-slate-200">
+    <h1 class="text-center text-6xl font-semibold my-10 bg-indigo-200">
+      Mari belajar mengguanakan tailwind
+    </h1>
+
+    <section class="mb-10">
+      <h2 class="text-3xl text-center bg-green-300">Spacing</h2>
+      <div class="m-13">margin</div>
+      <div class="p-10">padding</div>
+    </section>
+
+    <section class="mb-10">
+      <h2 class="text-3xl text-center bg-green-300">Sizing</h2>
+      <div class="w-1/2">width</div>
+      <div class="h-20">height</div>
+    </section>
+
+    <section class="mb-40 font-inter max-w-3xl mx-auto">
+      <h2 class="mb-4 text-4xl font-bold">Typographi</h2>
+      <div class="mb-2 text-lg text-gray-500">
+        by <a href="#" class="text-gray-700 font-semibold"> riyan first </a>
+        tiyanto, 2022
+      </div>
+      <p class="mb-4">
+        Lorem ipsum dolor, sit amet
+        <a href="#" class="underline font-semibold">consectetur</a> adipisicing
+        elit. Hic, amet temporibus nulla iure enim perspiciatis esse ab dolorum
+        sit labore, qui explicabo mollitia voluptatum quae distinctio iste
+        quisquam nobis culpa eum. Quibusdam repudiandae sequi sunt, praesentium
+        numquam eos rerum, deleniti, suscipit dolores quia inventore? Illum
+        voluptas ut quia cumque velit!
+      </p>
+      <blockquote class="mb-4 italic font-thin text-xl">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores,
+        adipisci recusandae? Possimus tenetur nobis illum, velit ratione debitis
+        corporis vitae!
+      </blockquote>
+      <p class="mb-4">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Pariatur,
+        dolorum eaque maxime quis, optio laudantium provident quo repellendus
+        inventore libero esse a error dolorem? Itaque eligendi illum ad tenetur
+        sapiente.
+      </p>
+    </section>
+
+    <!-- mengguanakn bg -->
+    <div
+      class="max-w-xl h-96 bg-slate-300 mx-auto mt-[42px] overflow-y-scroll bg-fixed"
+      style="
+        background-image: url('http://source.unsplash.com/1000x600?computer');
+      "
+    >
+      <p class="p-5 text-2xl">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum
+        nulla eligendi, ullam perspiciatis mollitia consequuntur officiis. Neque
+        reprehenderit laborum ipsa accusamus quibusdam nulla perferendis, id
+        veritatis ex expedita, quia earum possimus cupiditate vero tenetur quod
+        ab temporibus similique vel! Harum nostrum laborum architecto
+        consequatur, voluptate ab nemo sed dolore praesentium deleniti fugit,
+        rerum soluta ex modi? Ipsa ratione nobis laborum id! Voluptas, officia
+        nam doloribus temporibus necessitatibus ipsam maxime. Earum sequi
+        asperiores alias unde eaque fugiat facilis commodi ipsum quam velit nisi
+        suscipit nulla possimus quod minus, ipsa ad tenetur perspiciatis beatae
+        doloribus praesentium quasi temporibus eos. Ipsam totam, enim in atque
+        quis tempora quas nulla saepe impedit architecto ab, soluta molestias
+        cumque blanditiis. Tempore unde iste eveniet neque a explicabo voluptate
+        praesentium nesciunt quis aperiam eius eligendi obcaecati, temporibus
+        deserunt culpa doloremque delectus aspernatur illo! Sunt, modi
+        laboriosam! Sunt praesentium impedit consequatur at possimus obcaecati
+        perferendis voluptatum velit, doloremque accusantium! Exercitationem
+        voluptate eaque consequuntur ea earum possimus rem atque vitae maxime
+        vel autem magnam iure rerum reprehenderit sint, beatae quaerat,
+        consectetur accusamus blanditiis pariatur corporis! Accusamus esse saepe
+        molestias, beatae recusandae ducimus non tempora velit at fugit placeat
+        a magnam, aliquid neque quasi! Totam quae error sapiente laboriosam
+        nulla?
+      </p>
+    </div>
+
+    <!-- mengguanakn bg-sizing -->
+    <!-- border -->
+    <div
+      class="mt-32 max-w-xl mx-auto h-96 bg-slate-300 bg-contain bg-no-repeat bg-center rounded-br-2xl shadow-xl shadow-slate-500 overflow-hidden border-8 flex"
+      style="background-image: url(./img/1.jpg)"
+    >
+      <div
+        class="w-[100px] h-[100px] bg-white/70 m-auto backdrop-blur-md"
+      ></div>
+    </div>
+
+    <hr class="my-20" />
+
+    <div class="flex justify-center">
+      <span class="text-sm text-slate-50 mr-2">Light</span>
+      <input type="checkbox" id="toggle" class="hidden" />
+      <label for="toggle">
+        <div
+          class="w-9 h-5 bg-slate-500 rounded-full flex items-center p-1 cursor-pointer"
+        >
+          <div class="h-4 w-4 bg-white rounded-full toggle-circle"></div>
+        </div>
+      </label>
+      <span class="text-sm text-slate-50 ml-2">Dark</span>
+    </div>
+
+    <button
+      class="my-10 bg-sky-500 px-5 py-2 rounded-full text-white font-semibold font-inter block mx-auto hover:bg-sky-600 active:bg-sky-700 focus:ring focus:ring-sky-500 dark:bg-slate-300 dark:text-slate-800 dark:hover:text-slate-900 dark:hover:bg-slate-100"
+    >
+      Simpan
+    </button>
+
+    <!-- grouping -->
+    <div
+      class="max-w-lg my-10 border border-slate-200 rounded-xl mx-auto p-5 shadow-md font-serif hover:bg-sky-500 group dark:hover:bg-slate-300"
+    >
+      <h5
+        class="font-bold text-slate-700 text-lg mb-3 group-hover:text-white dark:group-hover:text-slate-800"
+      >
+        My Card
+      </h5>
+      <p
+        class="text-slate-600 group-hover:text-white selection:bg-lime-300 selection:text-slate-900 first-line:uppercase first-line:tracking-widest first-letter:text-7xl first-letter:float-left first-letter:mr-3 dark:group-hover:text-slate-800"
+      >
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Quis provident
+        officiis, magni voluptatem reiciendis nihil amet soluta tenetur qui
+        assumenda harum eligendi, sequi nesciunt illum. Ad numquam tempore sunt
+        similique.
+      </p>
+    </div>
+
+    <div
+      class="max-w-lg my-10 border border-slate-200 rounded-xl mx-auto p-5 shadow-md font-inter"
+    >
+      <form action="">
+        <label for="email">
+          <span
+            class="block font-semibold mb-1 text-slate-700 after:content-['*'] after:text-pink-500 after:ml-0.5"
+            >Email</span
+          >
+          <input
+            type="email"
+            name="email"
+            id="email"
+            placeholder="masukan email"
+            class="px-3 py-2 border shadow rounded w-full block text-sm placeholder:text-slate-400 focus:outline-none focus:ring-1 focus:ring-sky-500 focus:border-sky-500 invalid:text-pink-700 focus:invalid:ring-pink-700 invalid:border-pink-700 peer"
+          />
+          <p class="text-sm text-pink-700 invisible peer-invalid:visible">
+            email tidak valid
+          </p>
+        </label>
+      </form>
+    </div>
+
+    <hr class="my-20" />
+    <div
+      class="w-40 h-40 bg-sky-500 mx-auto rounded-lg shadow-lg hover:scale-125 hover:rotate-45 hover:bg-pink-500 transition origin-top-left"
+    ></div>
+
+    <div class="w-40 h-40 mt-20 mb-20 mx-auto group">
+      <div
+        class="w-full h-full bg-sky-500 rounded-lg shadow-lg group-hover:rotate-180 origin-top-left transition duration-1000 ease-in"
+      ></div>
+    </div>
+
+    <div
+      class="mb-100 w-40 h-40 bg-pink-500 mx-auto rounded-lg shadow-lg mt-100 animate-spin-slow"
+    ></div>
+
+    <div
+      class="mt-100 w-40 h-40 bg-pink-500 mx-auto rounded-lg shadow-lg mt-100 animate-wiggle-goyang"
+    ></div>
+
+    <hr class="my-20 border-t-4" />
+
+    <div class="container px-8 mx-auto">
+      <div class="border rounded-lg shadow-lg p-10 relative">
+        <div
+          class="w-10 h-10 bg-sky-200 rounded-full flex fixed bottom-5 right-5 cursor-pointer"
+        >
+          <a href="#" class="text-xl m-auto">🔝</a>
+        </div>
+        <img src="img/1.jpg" alt="laptop" width="150" class="float-left mr-4" />
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque iusto
+          veniam tempora cumque voluptates error obcaecati quod amet minima
+          esse! Officia ullam id nam sed ipsa perspiciatis delectus molestiae
+          possimus?
+        </p>
+      </div>
+    </div>
+
+    <div
+      class="container mx-auto mt-20 border rounded-lg shadow-lg p-10 columns-3"
+    >
+      <img src="https://source.unsplash.com/600x400" alt="image" class="mb-4" />
+      <img src="https://source.unsplash.com/600x400" alt="image" class="mb-4" />
+      <img src="https://source.unsplash.com/600x400" alt="image" class="mb-4" />
+      <img src="https://source.unsplash.com/600x400" alt="image" class="mb-4" />
+      <img src="https://source.unsplash.com/600x400" alt="image" class="mb-4" />
+      <img src="https://source.unsplash.com/600x400" alt="image" class="mb-4" />
+    </div>
+
+    <hr class="my-24 border-t-4" />
+
+    <div
+      class="container px-6 font-inter max-w-md mx-auto sm:max-w-xl md:max-w-5xl lg:flex lg:max-w-full lg:p-0"
+    >
+      <div class="lg:p-12 lg:flex-1">
+        <h3 class="text-4xl font-bold text-slate-800 sm:text-5xl md:text-6xl">
+          <span class="text-sky-500">Riyan</span> First Tiyanto
+        </h3>
+        <img
+          src="img/2.jpg"
+          alt="Pemandangan"
+          class="mt-4 rounded-xl shadow-xl sm:mt-6 sm:h-64 sm:w-full sm:object-cover lg:hidden"
+        />
+        <h2 class="text-2xl font-semibold text-slate-800 sm:mt-8 sm:text-4xl">
+          Mari belajar TailWindCss
+        </h2>
+        <p class="mt-2 text-slate-600 sm:mt-4 sm:text-xl">
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto debitis
+          eum incidunt! Quas molestiae aliquam esse fuga natus quos tempora
+          voluptas vel, consectetur ipsam enim sint! Dignissimos quibusdam sequi
+        </p>
+        <div class="mt-4 sm:mt-6">
+          <a
+            href="#"
+            class="inline-block px-5 py-3 bg-red-600 text-white rounded-lg shadow-lg uppercase font-semibold tracking-wider text-sm sm:text-base"
+            >Subscribe Chanel Youtube</a
+          >
+        </div>
+      </div>
+      <div class="hidden lg:flex lg:w-1/2">
+        <img
+          src="img/2.jpg"
+          alt="Pemandangan"
+          class="object-cover rounded-l-full"
+        />
+      </div>
+    </div>
+
+    <hr class="my-24 border-t-4" />
+    <!-- menggunakan flex untuk membuat galery foto -->
+    <h2 class="mt-24 mb-10 text-center font-bold text-3xl text-slate-700">
+      My Galery
+    </h2>
+
+    <div
+      class="container mx-auto px-6 font-inter sm:flex sm:flex-wrap sm:gap-6 sm:justify-evenly"
+    >
+      <div
+        class="rounded-md shadow-lg overflow-hidden mb-10 bg-white sm:mb-0 sm:w-64 md:w-80 lg:w-72"
+      >
+        <img
+          src="https://source.unsplash.com/600x400"
+          alt="Image Caption"
+          class="w-full"
+        />
+        <div class="px-6 py-4">
+          <div class="font-bold text-xl mb-2 text-slate-700">Image Title</div>
+          <p class="text-sm text-slate-700">
+            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quidem
+            perferendis dignissimos hic omnis rerum molestiae?
+          </p>
+        </div>
+      </div>
+      <div
+        class="rounded-md shadow-lg overflow-hidden mb-10 bg-white sm:mb-0 sm:w-64 md:w-80 lg:w-72"
+      >
+        <img
+          src="https://source.unsplash.com/600x400"
+          alt="Image Caption"
+          class="w-full"
+        />
+        <div class="px-6 py-4">
+          <div class="font-bold text-xl mb-2 text-slate-700">Image Title</div>
+          <p class="text-sm text-slate-700">
+            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quidem
+            perferendis dignissimos hic omnis rerum molestiae?
+          </p>
+        </div>
+      </div>
+      <div
+        class="rounded-md shadow-lg overflow-hidden mb-10 bg-white sm:mb-0 sm:w-64 md:w-80 lg:w-72"
+      >
+        <img
+          src="https://source.unsplash.com/600x400"
+          alt="Image Caption"
+          class="w-full"
+        />
+        <div class="px-6 py-4">
+          <div class="font-bold text-xl mb-2 text-slate-700">Image Title</div>
+          <p class="text-sm text-slate-700">
+            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quidem
+            perferendis dignissimos hic omnis rerum molestiae?
+          </p>
+        </div>
+      </div>
+      <div
+        class="rounded-md shadow-lg overflow-hidden mb-10 bg-white sm:mb-0 sm:w-64 md:w-80 lg:w-72"
+      >
+        <img
+          src="https://source.unsplash.com/600x400"
+          alt="Image Caption"
+          class="w-full"
+        />
+        <div class="px-6 py-4">
+          <div class="font-bold text-xl mb-2 text-slate-700">Image Title</div>
+          <p class="text-sm text-slate-700">
+            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quidem
+            perferendis dignissimos hic omnis rerum molestiae?
+          </p>
+        </div>
+      </div>
+      <div
+        class="rounded-md shadow-lg overflow-hidden mb-10 bg-white sm:mb-0 sm:w-64 md:w-80 lg:w-72"
+      >
+        <img
+          src="https://source.unsplash.com/600x400"
+          alt="Image Caption"
+          class="w-full"
+        />
+        <div class="px-6 py-4">
+          <div class="font-bold text-xl mb-2 text-slate-700">Image Title</div>
+          <p class="text-sm text-slate-700">
+            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quidem
+            perferendis dignissimos hic omnis rerum molestiae?
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <hr class="my-24 border-t-4" />
+    <!-- menggunakan grid -->
+
+    <div
+      class="mt-64 p-2 font-inter grid grid-cols-2 gap-2 md:grid-cols-4 md:p-4"
+    >
+      <h2
+        class="text-xl h-15 font-semibold text-slate-700 md:col-start-4 md:row-start-2 md:flex"
+      >
+        <span class="self-center">Welcome to Github-Ryn</span>
+      </h2>
+      <div
+        class="h-15 text-lg font-bold text-slate-600 md:col-start-2 md:row-start-2 md:flex"
+      >
+        <span class="self-end">@RiyanFirst</span>
+      </div>
+
+      <div
+        class="h-15 bg-blue-500 aspect-[4/3] rounded-lg md:aspect-[3/4] xl:aspect-[4/3] overflow-hidden group relative hover:scale-95 transition-all duration-1000"
+      >
+        <div
+          class="w-full h-full bg-[url('/img/a.jpg')] bg-cover bg-center absolute group-hover:scale-125 group-hover:rotate-12 transition-all duration-1000"
+        ></div>
+      </div>
+      <div
+        class="h-15 bg-blue-500 aspect-[4/3] rounded-lg md:aspect-[3/4] xl:aspect-[4/3] overflow-hidden group relative hover:scale-95 transition-all duration-1000 md:col-start-3"
+      >
+        <div
+          class="w-full h-full bg-[url('/img/b.jpg')] bg-cover bg-center absolute group-hover:scale-125 group-hover:rotate-12 transition-all duration-1000"
+        ></div>
+      </div>
+      <div
+        class="h-15 bg-blue-500 aspect-[4/3] rounded-lg md:aspect-[3/4] xl:aspect-[4/3] overflow-hidden group relative hover:scale-95 transition-all duration-1000"
+      >
+        <div
+          class="w-full h-full bg-[url('/img/c.jpg')] bg-cover bg-center absolute group-hover:scale-125 group-hover:rotate-12 transition-all duration-1000"
+        ></div>
+      </div>
+      <div
+        class="h-15 bg-blue-500 aspect-[4/3] rounded-lg md:aspect-[3/4] xl:aspect-[4/3] overflow-hidden group relative hover:scale-95 transition-all duration-1000"
+      >
+        <div
+          class="w-full h-full bg-[url('/img/d.jpg')] bg-cover bg-center absolute group-hover:scale-125 group-hover:rotate-12 transition-all duration-1000"
+        ></div>
+      </div>
+      <div
+        class="h-15 bg-blue-500 aspect-[4/3] rounded-lg md:aspect-[3/4] xl:aspect-[4/3] overflow-hidden group relative hover:scale-95 transition-all duration-1000"
+      >
+        <div
+          class="w-full h-full bg-[url('/img/e.jpg')] bg-cover bg-center absolute group-hover:scale-125 group-hover:rotate-12 transition-all duration-1000"
+        ></div>
+      </div>
+      <div
+        class="h-15 bg-blue-500 aspect-[4/3] rounded-lg md:aspect-[3/4] xl:aspect-[4/3] overflow-hidden group relative hover:scale-95 transition-all duration-1000 md:col-start-2"
+      >
+        <div
+          class="w-full h-full bg-[url('/img/f.jpg')] bg-cover bg-center absolute group-hover:scale-125 group-hover:rotate-12 transition-all duration-1000"
+        ></div>
+      </div>
+      <div
+        class="h-15 bg-blue-500 aspect-[4/3] rounded-lg md:aspect-[3/4] xl:aspect-[4/3] overflow-hidden group relative hover:scale-95 transition-all duration-1000 md:col-start-4"
+      >
+        <div
+          class="w-full h-full bg-[url('/img/g.jpg')] bg-cover bg-center absolute group-hover:scale-125 group-hover:rotate-12 transition-all duration-1000"
+        ></div>
+      </div>
+      <div
+        class="h-15 bg-blue-500 aspect-[4/3] rounded-lg md:aspect-[3/4] xl:aspect-[4/3] overflow-hidden group relative hover:scale-95 transition-all duration-1000"
+      >
+        <div
+          class="w-full h-full bg-[url('/img/h.jpg')] bg-cover bg-center absolute group-hover:scale-125 group-hover:rotate-12 transition-all duration-1000"
+        ></div>
+      </div>
+      <div
+        class="h-15 bg-blue-500 aspect-[4/3] rounded-lg md:aspect-[3/4] xl:aspect-[4/3] overflow-hidden group relative hover:scale-95 transition-all duration-1000 md:col-start-3"
+      >
+        <div
+          class="w-full h-full bg-[url('/img/i.jpg')] bg-cover bg-center absolute group-hover:scale-125 group-hover:rotate-12 transition-all duration-1000"
+        ></div>
+      </div>
+      <div
+        class="h-15 bg-blue-500 aspect-[4/3] rounded-lg md:aspect-[3/4] xl:aspect-[4/3] overflow-hidden group relative hover:scale-95 transition-all duration-1000 md:col-start-3"
+      >
+        <div
+          class="w-full h-full bg-[url('/img/j.jpg')] bg-cover bg-center absolute group-hover:scale-125 group-hover:rotate-12 transition-all duration-1000"
+        ></div>
+      </div>
+    </div>
+
+    <div class="mb-96"></div>
+
+    <script>
+      const checkbox = document.querySelector("#toggle");
+      const html = document.querySelector("html");
+
+      checkbox.addEventListener("click", function () {
+        checkbox.checked
+          ? html.classList.add("dark")
+          : html.classList.remove("dark");
+      });
+    </script>
+  </body>
+</html>
